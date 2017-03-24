@@ -9,6 +9,10 @@ Screenshots of the ported version:
 
 ![](screenshot/demoscreen.png)
 
+Screenshot of the original game on MS-0515:
+
+![](screenshot/original-ms0515.png)
+
 #### See Also
 
  - [Porting BK game Lode Runner to UKNC](https://github.com/nzeemin/uknc-loderunner)
