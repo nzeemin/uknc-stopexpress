@@ -48,14 +48,14 @@ namespace SpriteRotate
         };
         private static readonly int[] tile2Mods =
         {
-            OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, // 8
-            OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, // 9
-            OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, // a
-            OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, // b
-            OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, // c
-            OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, // d
-            OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, // e
-            OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, // f
+            OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, RED, RED, RED, RED, RED, RED, RED, RED, // 8
+            OOO, OOO, OOO, OOO, OOO, OOO, GRN, GRN, RED, RED, RED, RED, RED, RED, RED, RED, // 9
+            GRN, GRN, GRN, GRN, OOO, OOO, OOO, OOO, RED, RED, RED, RED, RED, RED, RED, GRN, // a
+            GRN, GRN, GRN, GRN, GRN, GRN, OOO, OOO, RED, RED, RED, RED, RED, RED, RED, OOO, // b
+            OOO, OOO, GRN, OOO, OOO, GRN, GRN, OOO, OOO, GRN, OOO, GRN, RED, OOO, RED, OOO, // c
+            OOO, OOO, GRN, OOO, OOO, OOO, OOO, OOO, OOO, GRN, GRN, GRN, RED, RED, RED, RED, // d
+            GRN, GRN, RED, OOO, OOO, OOO, OOO, RED, OOO, OOO, RED, GRN, OOO, RED, OOO, RED, // e
+            OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, RED, OOO, GRN, RED, RED, RED, RED, // f
         };
         private static readonly int[] tile3Mods =
         {
@@ -66,11 +66,12 @@ namespace SpriteRotate
 
         static void Main(string[] args)
         {
-            Bitmap bmpTiles = new Bitmap(180, 240, PixelFormat.Format32bppArgb);
+            Bitmap bmpTiles = new Bitmap(180, 300, PixelFormat.Format32bppArgb);
 
             DrawTiles(14726, bmpTiles, 128, 10, 10);
-            DrawTiles(15880, bmpTiles, 128, 10, 10 + 80 + 2);
-            DrawTiles(18186, bmpTiles, 48, 10, 10 + 80 + 2 + 80 + 2);
+            DrawTiles(15880, bmpTiles, 128, 10, 10 + (80 + 2));
+            DrawTiles(17034, bmpTiles, 128, 10, 10 + (80 + 2) * 2);
+            DrawTiles(18186, bmpTiles,  48, 10, 10 + (80 + 2) * 3);
 
             bmpTiles.Save("tiles.png");
 
