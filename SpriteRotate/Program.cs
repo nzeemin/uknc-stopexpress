@@ -79,13 +79,38 @@ namespace SpriteRotate
 
             FileStream fs = new FileStream("SPRITE.MAC", FileMode.Create);
             StreamWriter writer = new StreamWriter(fs);
-            writer.WriteLine();
             writer.WriteLine("; START OF TILES.MAC");
+            writer.WriteLine();
+            writer.WriteLine("; Блок тайлов поезда, начальное состояние, 416. байт, 13 строк по 32 тайла");
+            writer.WriteLine("\t.EVEN");
+            DumpBytes(writer, 11808, 416, 9);  // 027040
+            writer.WriteLine();
+            writer.WriteLine("\t.EVEN");
+            DumpBytes(writer, 12224, 256);  // 027700
+            writer.WriteLine(";");
+            DumpBytes(writer, 12480, 320 + 128);  // 030300
+            writer.WriteLine(";");
+            DumpBytes(writer, 12928, 32);  // 031200
+            DumpBytes(writer, 12960, 20);  // 031240
+            writer.WriteLine(";");
+            DumpBytes(writer, 12980, 768, 0);  // 031264
+            writer.WriteLine(";Z32664:");
+            writer.WriteLine();
             RotateTiles(writer, 14726, 128, 0, tile0Mods);    // 034606
+            writer.WriteLine();
             RotateTiles(writer, 15880, 128, 128, tile1Mods);  // 037010
+            writer.WriteLine();
             RotateTiles(writer, 17034, 128, 128, tile2Mods);  // 041212
+            writer.WriteLine();
             RotateTiles(writer, 18188, 48, 176, tile3Mods);   // 043414
             writer.WriteLine();
+
+            writer.WriteLine("; Сжатая демо-последовательность");
+            DumpBytes(writer, 18620, 374);  // 044274
+            writer.WriteLine();
+            writer.WriteLine("\t.EVEN");
+            writer.WriteLine("; END OF TILES.MAC");
+
             writer.Flush();
         }
 
@@ -119,9 +144,8 @@ namespace SpriteRotate
             }
         }
 
-        public static void RotateTiles(StreamWriter writer, int address, int tilecount, int tileoffset, int[] tileMods)
+        static void RotateTiles(StreamWriter writer, int address, int tilecount, int tileoffset, int[] tileMods)
         {
-            writer.WriteLine();
             writer.WriteLine("; Блок из {0} тайлов с {1} тайла", EncodeOctalString((byte)tilecount), EncodeOctalString((byte)tileoffset));
             writer.WriteLine("\t.EVEN");
             string saddress = "Z" + EncodeOctalString2(address - 2).Substring(1);
@@ -182,7 +206,35 @@ namespace SpriteRotate
             }
         }
 
-        public static string EncodeOctalString(byte value)
+        static void DumpBytes(StreamWriter writer, int address, int length, int numlines = -1)
+        {
+            string saddress = "Z" + EncodeOctalString2(address).Substring(1);
+            writer.Write("{0}::", saddress);
+            for (int i = 0; i < length; i++)
+            {
+                if (i == 0)
+                    writer.Write(".BYTE\t");
+                else if (i % 16 == 0)
+                    writer.Write("\t.BYTE\t");
+                else
+                    writer.Write(",");
+
+                byte b = memdmp[address + i];
+                writer.Write(EncodeOctalString(b));
+
+                if (numlines >= 0 && i % 32 == 15)
+                {
+                    writer.Write("\t; {0}", numlines);
+                    numlines++;
+                }
+                if (i % 16 == 15)
+                    writer.WriteLine();
+            }
+            if (length % 16 != 0)
+                writer.WriteLine();
+        }
+
+        static string EncodeOctalString(byte value)
         {
             //convert to int, for cleaner syntax below. 
             int x = (int)value;
@@ -195,7 +247,7 @@ namespace SpriteRotate
             );
         }
 
-        public static string EncodeOctalString2(int x)
+        static string EncodeOctalString2(int x)
         {
             return string.Format(
                 @"{0}{1}{2}{3}{4}{5}",
