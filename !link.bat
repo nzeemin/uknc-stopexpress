@@ -1,2 +1,0 @@
-C:\bin\rt11\rt11.exe LINK EXPRES /MAP:OUTPUT.MAP
-@if exist OUTPUT.MAP type OUTPUT.MAP
