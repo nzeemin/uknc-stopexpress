@@ -7,9 +7,11 @@ And finally in March 2017 I started to port the game to UKNC.
 
 Screenshots of the ported version:
 
-![](screenshot/demoscreen.png)
+![](screenshot/demoscreen.png) ![](screenshot/demoscreen2.png)
 
-![](screenshot/demoscreen2.png)
+Video for demo mode:
+
+[![](http://img.youtube.com/vi/66ETuJ9uO6s/0.jpg)](http://www.youtube.com/watch?v=66ETuJ9uO6s)
 
 Screenshot of the original game on MS-0515:
 
