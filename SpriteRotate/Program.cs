@@ -26,8 +26,8 @@ namespace SpriteRotate
 
         private static readonly int[] tile0Mods =
         {
-            RED, OOO, OOO, OOO, OOO, OOO, OOO, OOO, WGI, WGI, WGI, WGI, WGI, WGI, WGI, OOO, // 0
-            OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, WGI, WGO, WGI, WGO, WGO, WGI, WGI, OOO, // 1
+            RED, OOO, RED, RED, OOO, OOO, OOO, OOO, WGI, WGI, WGI, WGI, WGI, WGI, WGI, OOO, // 0
+            OOO, OOO, RED, RED, OOO, OOO, OOO, OOO, WGI, WGO, WGI, WGO, WGO, WGI, WGI, OOO, // 1
             OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, // 2
             OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, // 3
             OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, // 4
@@ -51,7 +51,7 @@ namespace SpriteRotate
             OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, RED, RED, RED, RED, RED, RED, RED, RED, // 8
             OOO, OOO, OOO, OOO, OOO, OOO, GRN, GRN, RED, RED, RED, RED, RED, RED, RED, RED, // 9
             GRN, GRN, GRN, GRN, OOO, OOO, OOO, OOO, RED, RED, RED, RED, RED, RED, RED, GRN, // a
-            GRN, GRN, GRN, GRN, GRN, GRN, OOO, OOO, RED, RED, RED, RED, RED, RED, RED, OOO, // b
+            GRN, GRN, GRN, GRN, GRN, GRN, OOO, OOO, RED, RED, RED, RED, RED, RED, RED, GRN, // b
             OOO, OOO, GRN, OOO, OOO, GRN, GRN, OOO, OOO, GRN, OOO, GRN, RED, OOO, RED, OOO, // c
             OOO, OOO, GRN, OOO, OOO, OOO, OOO, OOO, OOO, GRN, GRN, GRN, RED, RED, RED, RED, // d
             GRN, GRN, RED, OOO, OOO, OOO, OOO, RED, OOO, OOO, RED, GRN, OOO, RED, OOO, RED, // e
