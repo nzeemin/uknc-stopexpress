@@ -59,9 +59,9 @@ namespace SpriteRotate
         };
         private static readonly int[] tile3Mods =
         {
-            OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, // b
-            OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, // c
-            OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, OOO, // d
+            SP1, SP1, SP1, GRN, GRN, GRN, GRN, GRN, GRN, GRN, GRN, GRN, GRN, GRN, GRN, GRN, // b
+            GRN, GRN, GRN, GRN, GRN, GRN, GRN, GRN, GRN, OOO, GRN, GRN, OOO, OOO, GRN, OOO, // c
+            GRN, GRN, GRN, GRN, GRN, GRN, GRN, SP1, SP1, GRN, SP1, GRN, OOO, GRN, GRN, OOO, // d
         };
 
         static void Main(string[] args)
@@ -71,7 +71,7 @@ namespace SpriteRotate
             DrawTiles(14726, bmpTiles, 128, 10, 10);
             DrawTiles(15880, bmpTiles, 128, 10, 10 + (80 + 2));
             DrawTiles(17034, bmpTiles, 128, 10, 10 + (80 + 2) * 2);
-            DrawTiles(18186, bmpTiles,  48, 10, 10 + (80 + 2) * 3);
+            DrawTiles(18188, bmpTiles,  48, 10, 10 + (80 + 2) * 3);
 
             bmpTiles.Save("tiles.png");
 
