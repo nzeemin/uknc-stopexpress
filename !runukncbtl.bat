@@ -1,7 +1,7 @@
 @echo off
 
 if exist x-ukncbtl\EXPRES.BIN del x-ukncbtl\EXPRES.BIN
-D:\Work\MyProjects\ukncbtl-utils\Sav2Cartridge\Release\Sav2Cart.exe EXPRES.SAV EXPRES.BIN
+C:\bin\Sav2Cart.exe EXPRES.SAV EXPRES.BIN
 move EXPRES.BIN x-ukncbtl\EXPRES.BIN
 
 del x-ukncbtl\sys1002.dsk
@@ -19,4 +19,4 @@ move sys1002.dsk x-ukncbtl\sys1002.dsk
   exit /b
 )
 
-start x-ukncbtl\UKNCBTL.exe
+start x-ukncbtl\UKNCBTL.exe /boot
